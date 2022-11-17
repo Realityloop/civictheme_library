@@ -1,5 +1,6 @@
 {
   "name": "civictheme",
+  "version": "1.2.6",
   "private": true,
   "description": "CivicTheme components with Storybook integration.",
   "keywords": [
