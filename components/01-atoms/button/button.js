@@ -122,6 +122,10 @@ CivicThemeButton.prototype.findButton = function (el) {
   return el.closest('.ct-button');
 };
 
-document.querySelectorAll('.ct-button').forEach((el) => {
-  new CivicThemeButton(el);
-});
+if (typeof document !== 'undefined') {
+  document.querySelectorAll('.ct-button').forEach((el) => {
+    new CivicThemeButton(el);
+  });
+}
+
+module.exports = CivicThemeButton;

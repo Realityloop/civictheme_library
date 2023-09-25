@@ -53,7 +53,11 @@ CivicThemeTable.prototype.addTheadColumnTitles = function () {
   });
 };
 
-document.querySelectorAll('.ct-basic-content table, .ct-table').forEach((table) => {
-  // eslint-disable-next-line no-new
-  new CivicThemeTable(table);
-});
+if (typeof document !== 'undefined') {
+  document.querySelectorAll('.ct-basic-content table, .ct-table').forEach((table) => {
+    // eslint-disable-next-line no-new
+    new CivicThemeTable(table);
+  });
+}
+
+module.exports = CivicThemeTable;
