@@ -110,6 +110,10 @@ CivicThemeChip.prototype.findChip = function (el) {
   return el.closest('.ct-chip');
 };
 
-document.querySelectorAll('.ct-chip').forEach((el) => {
-  new CivicThemeChip(el);
-});
+if (typeof document !== 'undefined') {
+  document.querySelectorAll('.ct-chip').forEach((el) => {
+    new CivicThemeChip(el);
+  });
+}
+
+module.exports = CivicThemeChip;

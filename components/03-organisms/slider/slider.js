@@ -146,6 +146,10 @@ CivicThemeSlider.prototype.updateProgress = function () {
   this.progressIndicator.innerHTML = `Slide ${this.currentSlide + 1} of ${this.totalSlides}`;
 };
 
-document.querySelectorAll('[data-slider]').forEach((slider) => {
-  new CivicThemeSlider(slider);
-});
+if (typeof document !== 'undefined') {
+  document.querySelectorAll('[data-slider]').forEach((slider) => {
+    new CivicThemeSlider(slider);
+  });
+}
+
+module.exports = CivicThemeSlider;

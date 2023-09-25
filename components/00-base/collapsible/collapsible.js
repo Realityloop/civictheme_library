@@ -435,15 +435,19 @@ CivicThemeCollapsible.prototype.htmlToElement = function (html) {
   return template.content.firstChild;
 };
 
-document.querySelectorAll('[data-collapsible]').forEach((el) => {
-  // Delay initialisation if should be responsive.
-  const breakpointExpr = el.getAttribute('data-responsive');
-  if (breakpointExpr) {
-    window.addEventListener('ct-responsive', (evt) => {
-      evt.detail.evaluate(breakpointExpr, CivicThemeCollapsible, el);
-    }, false);
-    return;
-  }
+if (typeof document !== 'undefined') {
+  document.querySelectorAll('[data-collapsible]').forEach((el) => {
+    // Delay initialisation if should be responsive.
+    const breakpointExpr = el.getAttribute('data-responsive');
+    if (breakpointExpr) {
+      window.addEventListener('ct-responsive', (evt) => {
+        evt.detail.evaluate(breakpointExpr, CivicThemeCollapsible, el);
+      }, false);
+      return;
+    }
 
-  new CivicThemeCollapsible(el);
-});
+    new CivicThemeCollapsible(el);
+  });
+}
+
+module.exports = CivicThemeCollapsible;
