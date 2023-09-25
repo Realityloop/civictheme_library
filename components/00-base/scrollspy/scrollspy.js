@@ -32,6 +32,10 @@ CivicThemeScrollspy.prototype.scrollEvent = function () {
   }
 };
 
-document.querySelectorAll('[data-scrollspy]').forEach((el) => {
-  new CivicThemeScrollspy(el);
-});
+if (typeof document !== 'undefined') {
+  document.querySelectorAll('[data-scrollspy]').forEach((el) => {
+    new CivicThemeScrollspy(el);
+  });
+}
+
+module.exports = CivicThemeScrollspy;

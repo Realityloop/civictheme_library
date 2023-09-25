@@ -154,7 +154,11 @@ CivicThemeFlyout.prototype.collapse = function () {
 };
 
 // Initialize CivicThemeFlyout on every element.
-document.querySelectorAll('[data-flyout]').forEach((flyout) => {
-  // eslint-disable-next-line no-new
-  new CivicThemeFlyout(flyout);
-});
+if (typeof document !== 'undefined') {
+  document.querySelectorAll('[data-flyout]').forEach((flyout) => {
+    // eslint-disable-next-line no-new
+    new CivicThemeFlyout(flyout);
+  });
+}
+
+module.exports = CivicThemeFlyout;

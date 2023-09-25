@@ -268,6 +268,10 @@ CivicThemeAlert.prototype.urlPath = function () {
 /**
  * Initialise component.
  */
-document.querySelectorAll('[data-component-name="ct-alerts"]').forEach((el) => {
-  new CivicThemeAlert(el);
-});
+if (typeof document !== 'undefined') {
+  document.querySelectorAll('[data-component-name="ct-alerts"]').forEach((el) => {
+    new CivicThemeAlert(el);
+  });
+}
+
+module.exports = CivicThemeAlert;

@@ -140,6 +140,10 @@ CivicThemeTooltip.prototype.destroy = function (el) {
   delete this.position;
 };
 
-document.querySelectorAll('.ct-tooltip').forEach((el) => {
-  new CivicThemeTooltip(el);
-});
+if (typeof document !== 'undefined') {
+  document.querySelectorAll('.ct-tooltip').forEach((el) => {
+    new CivicThemeTooltip(el);
+  });
+}
+
+module.exports = CivicThemeTooltip;
