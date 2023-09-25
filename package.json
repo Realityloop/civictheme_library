@@ -15,9 +15,6 @@
   "bugs": "https://github.com/salsadigitalauorg/civictheme_source/issues",
   "repository": "https://github.com/salsadigitalauorg/civictheme_source.git",
   "license": "GPL-2.0",
-  "engines": {
-    "node": ">=18.14"
-  },
   "scripts": {
     "build": "npm run dist && export STORYBOOK_FULL=1 && npm run build-storybook -- --quiet",
     "build-storybook": "export NODE_OPTIONS=--openssl-legacy-provider && build-storybook -s .storybook/static",
