@@ -29,9 +29,6 @@
     "test-storybook": "test-storybook",
     "test-storybook:ci": "concurrently --kill-others --success first --names \"SB,TEST\" --prefix-colors \"magenta,blue\" \"npx http-server storybook-static --port 6006 -a 127.0.0.1 --silent\" \"wait-on --timeout 10000 http://127.0.0.1:6006 && npm run test-storybook\""
   },
-  "engines": {
-    "node": ">=18.14"
-  },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "breakpoint-sass": "^3.0.0",
